@@ -1,9 +1,41 @@
-# This file should ensure the existence of records required to run the application in every environment (production,
-# development, test). The code here should be idempotent so that it can be executed at any point in every environment.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Example:
-#
-#   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
-#     MovieGenre.find_or_create_by!(name: genre_name)
-#   end
+Task.destroy_all
+
+STATUSES = Task.statuses.keys => ["pending", "in_progress", "blocked", "completed"]
+
+ACTIONS = [
+  "Mow",
+  "Weedwack",
+  "Paint",
+  "Fumigate ",
+  "Caulk",
+  "Weed",
+  "Water",
+  "Change the heat pump in",
+  "Wash"
+].freeze
+
+LOCATIONS = [
+    "Pool",
+    "Garage",
+    "Living Room",
+    "Dishwasher",
+    "Laundry Room",
+    "Elevator",
+    "Library",
+    "Conservatory"
+].freeze
+
+
+50.times do |i|
+  action = ACTIONS.sample
+  location = LOCATIONS.sample
+  date = rand(0..30).days.from_now
+  Task.create!(
+    title: "#{action} the #{location} Ticket ##{i + 1}",
+    content: "The #{location} is in a terrible state of disrepair. \n #{action} it ",
+    status: STATUSES.sample,
+    due_at: date
+  )
+end
+
+puts "Seeded #{Task.count} tasks"
