@@ -32,8 +32,9 @@ docker.
 
 3. Throw it on the landing page for now.
 
-- Components:
-- navbar containg search bar and new
+Components:
+
+- navbar containing search bar and new
 - searchbar (thinking search will be a client side filter rather than a db fuzzy in PG)
 - Row container
 - card container (want edit functonality directly in the card)
@@ -55,7 +56,8 @@ at scale (lets say it sa task manager for a global org)
 5. Wire up your 50 seeded todos and see how ugly things look
 
 6. Search (live dom filter) - we have a title field / text field here so simple type filter wouldnt be the worst
-   -need to make some decisions on how things look based on possible search senarios do we want to
+
+   - need to make some decisions on how things look based on possible search senarios do we want to
 
    - handle whole word with correct spelling only (prob a good place to start) Lets do that and see how clunky it is (improve if needed)
      -map out how the search should feel
@@ -69,7 +71,8 @@ at scale (lets say it sa task manager for a global org)
 3. add tagging
 4. idea of sub tickets (off the top of my head this one is a of kind interesting split between backend and frontend)
    - the frontend is simple we want a parent task object to have an array of subs when it comes over
-   - beckend is different
+   - backend is different
    - arrays in the db are stupid so we wont do that
    - could create a totally same same but new type of task called a sub (this feels duplicative and dumb)
-   - could add a parent_id column to task object, this might back us into some weird search things especially at scale (so far this is my favorite I thin)
+   - could add a parent_id column to task object, this might back us into some weird search things especially at scale (so far this is my favorite I think)
+   - graphql would make the parrent id search piece and initial DOM draw nicer.
