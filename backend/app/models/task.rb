@@ -1,5 +1,5 @@
 class Task < ApplicationRecord
-  enum status: {
+  enum :status, {
     pending: 0,
     in_progress: 1,
     blocked: 2,
