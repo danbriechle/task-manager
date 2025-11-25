@@ -60,7 +60,7 @@ This creates the DB schema and seeds 50 sample silly chores / tasks.
 ### Run backend tests
 
 ```bash
-- docker compose exec -e RAILS_ENV=test backend bundle exec rspec
+docker compose exec -e RAILS_ENV=test backend bundle exec rspec
 ```
 
 # 📚 Future Enhancements
