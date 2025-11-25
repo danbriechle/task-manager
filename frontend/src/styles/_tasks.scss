@@ -1,0 +1,51 @@
+@use './variables' as vars;
+
+.tasks-page {
+  min-height: 100vh;
+  background: vars.$bg-body;
+
+  &__main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1.25rem 1rem 2rem;
+  }
+}
+
+.task-card {
+  border: 1px solid vars.$border-subtle;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.5rem;
+  background: vars.$bg-card;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 0.5rem;
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  &__status {
+    font-size: 0.75rem;
+    padding: 0.15rem 0.35rem;
+    border-radius: 999px;
+    border: 1px solid vars.$border-subtle;
+    text-transform: capitalize;
+  }
+
+  &__content {
+    margin: 0.45rem 0 0.25rem;
+    font-size: 0.9rem;
+  }
+
+  &__meta {
+    font-size: 0.75rem;
+    color: vars.$text-muted;
+  }
+}
